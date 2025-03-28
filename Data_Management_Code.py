@@ -27,8 +27,6 @@ def fleet_data(filename):
     return totalFleetList
 
 
-
-# Maia Antolic 400598105
 def daily_data(passenger_data,fleet_data):
     """this function takes in passenger and plane data lists to compare the gates 
     and see which plane a passenger is on. It then checks if passengers are economy
@@ -58,10 +56,6 @@ def daily_data(passenger_data,fleet_data):
     return daily_data_list
 
 
-
-"""
-Logan Prince -- 400584088
-"""
 
 def oversold(passenger_data, fleet_data, daily_data):
     """ This function returns the oversold seats for economy and buisness seats
@@ -96,9 +90,7 @@ def overweight(passengerData,fleetData):
    
     for plane in fleetData:
         """ This function returns the passengers that have
-        more than the maximum weight allowed per passenger
-        Name: Lisa
-        mcID: Zhengl53"""
+        more than the maximum weight allowed per passenger"""
         planeName = plane[0] #setting a variable to the plane modle index
         planeInfo = [planeName,0]
        
@@ -121,8 +113,7 @@ def overweight(passengerData,fleetData):
     return planes,passengers
 
 def time_delay(passenger_data,fleet_data):
-    """ Reports the passengers that have layovers and lates
-    Mustafa Alhamadni 400577345"""
+    """ Reports the passengers that have layovers and lates"""
     time_delay = []
     for gate in fleet_data:
         count = 0 # setting the count to zero in every loop
@@ -137,8 +128,7 @@ def time_delay(passenger_data,fleet_data):
 def layover(passengerData, fleetData):
     """The layover function takes in the output from the passengerData and fleetData as
     parameters and returns two 2-D lists, one with the plane name and total layover
-    passengers and the other is a list of passengers with layover status, Nithya
-    Majeti 400569912"""
+    passengers and the other is a list of passengers with layover status"""
     passengerList = passengerData
     fleetList = fleetData
     status = "Layover"
