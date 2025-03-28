@@ -1,0 +1,42 @@
+ip_address =  "localhost"
+project_identifier = 'P3A'
+#--------------------------------------------------------------------------------
+import sys
+sys.path.append('../')
+from Common.hardware_project_library import *
+from Common.barcode_checker import *
+from Common.standalone_actuator_lib import *
+bot = qbot()
+hardware = True
+arm = qarm(project_identifier,ip_address,hardware)
+table = servo_table(ip_address,None,hardware)
+scanner = barcode_checker()
+
+#--------------------------------------------------------------------------------
+# STUDENT CODE BEGINS
+#---------------------------------------------------------------------------------
+
+for i in range(4):
+     arm.home()
+     arm.move_arm(0,-0.44,0.23)
+     time.sleep(1.5)
+     arm.control_gripper(44)
+     if scanner.barcode_check() == "Platform":
+	arm.move_arm(0,-0.44,0.226)
+	arm.control_gripper(-20)
+     else: 
+	arm.move_arm(0,0.42,0.301)
+	arm.control_gripper(-20)
+     table.rotate_table_angle(90)
+     time.sleep(1)
+
+
+#---------------------------------------------------------------------------------
+# STUDENT CODE ENDS
+#---------------------------------------------------------------------------------
+
+
+    
+
+    
+
